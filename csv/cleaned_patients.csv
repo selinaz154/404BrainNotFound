@@ -1,0 +1,101 @@
+PatientID,BirthDate,DeceasedDateTime,MaritalStatus,Race,Ethnicity,Language
+0a8eebfd-a352-522e-89f0-1d4a13abdebc,2128-05-06,2180-09-09,W,White,Not Hispanic or Latino,en
+0c2243d2-987b-5cbd-8eb1-170a80647693,2089-06-05,2149-11-21,S,White,Not Hispanic or Latino,en
+13df78e7-150e-5eb7-be5f-5f62b2baee87,2111-03-12,,M,White,Not Hispanic or Latino,en
+158f3a39-e3d7-5e7a-93aa-57af894aadd9,2104-10-28,,M,White,Not Hispanic or Latino,en
+1ab119a5-aac8-5002-9d2f-b8ff69623387,2114-09-10,,S,White,Not Hispanic or Latino,en
+1bb918ba-e04e-5e7a-87ca-dbcbbb4c72c3,2105-02-17,2143-03-30,S, Black or African American,Not Hispanic or Latino,en
+1cf9e585-806c-513b-80af-4ca565a28231,2133-09-15,,S,White,Not Hispanic or Latino,en
+22a3e422-663a-561c-b305-a0c04bf42235,2085-03-12,2172-04-19,M,White,Not Hispanic or Latino,en
+23069939-0c4c-517b-a3ec-baae0d4e3988,2062-06-20,,M,White,Not Hispanic or Latino,en
+23f959c1-6ac2-562b-9cbe-c111f338e27b,2136-02-10,2187-04-29,D,White,Not Hispanic or Latino,en
+24450f28-a039-57d8-95c9-d7ba5508ecd4,2119-12-30,,D,White,Not Hispanic or Latino,en
+27980ad8-77b7-5360-b211-bf4fac9c468c,2055-10-29,,W, Black or African American,Not Hispanic or Latino,en
+28776290-4349-56d3-8c13-adc554feabb8,2070-10-31,2137-10-09,M,White,Not Hispanic or Latino,en
+28dcf33b-0c52-587f-83ad-2a3270976719,2083-04-10,,S,White,Not Hispanic or Latino,en
+2955c958-192a-50eb-b59d-23a29d7d374e,2120-07-03,,S, Black or African American,Not Hispanic or Latino,en
+2edf1f64-2919-50e3-b98c-7a55dcfda00d,2133-04-27,,S,White,Not Hispanic or Latino,en
+3886cafb-65f4-5789-9213-64678a202f82,2052-09-05,,M,White,Not Hispanic or Latino,en
+3bbb6aec-41a3-5825-b6cf-422832002f96,2070-10-12,2137-10-31,D,White,Not Hispanic or Latino,en
+42f0ed8f-d744-5edb-a05d-8e011c1fbd64,2096-11-07,,S,White,Not Hispanic or Latino,en
+4365e125-c049-525a-9459-16d5e6947ad2,2073-12-02,,D,White,Not Hispanic or Latino,en
+4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765,2033-01-15,,W,White,Not Hispanic or Latino,en
+4c9069e4-486b-53a6-8a49-b8520d49ef7e,2064-04-11,,M,White,Not Hispanic or Latino,en
+4f773083-7f4d-5378-b839-c24ca1e15434,2049-09-17,2116-03-12,M,White,Not Hispanic or Latino,en
+51d2190c-cc46-56c5-b2ea-363895cbea75,2095-09-17,,M,White,Hispanic or Latino,
+52462b6a-9b39-5460-9ee6-1a2d7a20394e,2123-05-18,,M,unknown,,en
+53b0f2d8-24dc-5c82-903c-1bf98e510e96,2074-08-10,,M,White,Hispanic or Latino,
+568cb149-804c-59e8-bdf5-816e8151cd22,2149-02-24,,S, Black or African American,Not Hispanic or Latino,en
+5d0fc1da-e9bb-5b52-8e17-5930295afd2c,2030-03-19,2116-07-05,S,asked but unknown,,
+5ddeb201-5de6-5177-a116-fa82ce8ad2f2,2102-09-28,,S,White,Not Hispanic or Latino,en
+5f3dcdb5-bd27-58f5-b990-859b6bcc2d73,2086-05-22,,S,White,Not Hispanic or Latino,en
+5f74c4bf-681e-5123-ab4d-225c72be4f9f,2059-06-12,,UNK,White,Not Hispanic or Latino,en
+63bce7d4-9224-5d5d-ab3c-2967424deb0d,2041-06-16,,M,unknown,,en
+71a27b6b-5e41-509f-83a8-8f47e8fb8d78,2071-02-05,,D,White,Not Hispanic or Latino,en
+72d56b49-a7ee-5b9a-a679-25d1c836d3c3,2093-10-07,2184-11-22,M,White,Not Hispanic or Latino,en
+735c5ea5-a995-5613-9c30-5421bcc2cf25,2118-05-26,,M,White,Not Hispanic or Latino,en
+73eac996-32e6-5b25-96fb-7d7414180af9,2094-07-30,2146-02-09,W,White,Not Hispanic or Latino,en
+73fb53d8-f1fa-53cd-a25c-2314caccbb99,2077-06-10,2146-07-12,M,White,Not Hispanic or Latino,en
+740b7686-fa6d-5574-9779-f17ed7661cbe,2031-08-04,,W,White,Not Hispanic or Latino,en
+74a2fd87-885b-5eca-9f8b-9141915dba51,2070-04-05,,D,White,Not Hispanic or Latino,en
+76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32,2055-10-08,,UNK,unknown,,en
+77e10fd0-6a1c-5547-a130-fae1341acf36,2062-06-05,2137-09-02,M, Black or African American,Not Hispanic or Latino,en
+7d61fb4e-dc5e-5b1b-a7a6-1d96a3818546,2050-02-03,2117-06-26,S, Black or African American,Not Hispanic or Latino,en
+7ec7078a-0593-5a99-9862-ebbff47fd1c5,2073-02-19,,D,White,Not Hispanic or Latino,en
+807d2a03-9c57-55e3-a443-09fc8f1de866,2106-08-21,,UNK,unknown,,en
+8326334a-d5e4-5339-8c54-8463f95786a7,2062-03-22,,M,unknown,,en
+837b0984-f3bf-5076-baf5-b727decb4bea,2125-01-17,2185-01-22,M,unknown,,en
+842680b3-e421-58cc-8050-3b29668b438c,2038-10-09,2117-03-24,M,unknown,,en
+8659a6be-db5c-5f66-b629-1a3b858a487a,2122-12-02,2186-11-17,S,White,Not Hispanic or Latino,en
+86bce885-4646-59f1-8f95-d92545376ce6,2043-08-25,,M,White,Not Hispanic or Latino,en
+87dd177c-b3f5-584e-bf76-86e2ee047c1f,2039-06-23,2130-01-11,W,White,Not Hispanic or Latino,en
+88fcbf73-7d80-52ae-8f11-ee73c71df69b,2061-01-30,,S,White,Not Hispanic or Latino,en
+8adbf3e4-47ff-561e-b1b6-746ee32e056d,2094-03-11,,S,White,Not Hispanic or Latino,en
+8c3ba37b-ba80-576a-8028-5a58eccb6156,2119-06-15,,UNK,unknown,,en
+8d7b633e-0f92-5448-a56d-36c69210e860,2123-12-04,,S,unknown,,en
+9111ccb1-fc93-5599-ab7d-35f1e61d4214,2134-09-17,2201-07-13,M,White,Not Hispanic or Latino,en
+91e0e410-0782-5478-90e0-1bedc3aa1525,2052-09-27,2115-10-12,S,unknown,,
+91f25704-6153-5259-bdd7-2ca6478de14a,2083-12-21,2155-12-03,W,White,Not Hispanic or Latino,en
+94abdf17-f13a-5eae-aac0-eca407bbfadd,2119-11-07,,M,White,Not Hispanic or Latino,en
+95fa0da2-f5a6-5fc9-adcf-f66e05a8cf99,2140-03-20,,M,White,Not Hispanic or Latino,en
+9c3ebb7e-d087-519e-bea4-31c3d4aac7ff,2117-10-08,2175-07-20,W,White,Not Hispanic or Latino,en
+a0bcbbc0-b432-5f7d-ac63-28212f20dead,2130-09-10,,S,White,Not Hispanic or Latino,en
+a2605b15-4f1b-5839-b4ce-fb7a6bc1005f,2066-12-12,2135-01-19,M,White,Not Hispanic or Latino,en
+a3a12d01-dc21-565b-89e2-da60e7fc80dc,2090-01-02,,S,White,Not Hispanic or Latino,en
+a5d4cb17-db8d-574b-bd88-71473088fd9a,2145-08-05,2201-12-24,S, Black or African American,Not Hispanic or Latino,en
+a6e7e991-6801-5425-b435-4ca6b7decfcc,2102-11-18,,M,White,Not Hispanic or Latino,
+a7bbf9a2-f7fe-5815-a637-fa59bd70b374,2059-11-13,2111-11-15,UNK,unknown,,en
+a87c1099-8c87-5548-8fc0-56972a82cebf,2059-02-27,2131-04-28,UNK,unknown,,en
+a977f4b6-1eb6-5639-80da-3e025744c4ac,2058-07-30,,UNK,White,Not Hispanic or Latino,en
+aeda7084-be35-510e-b171-f00596aed99f,2106-01-14,,M,White,Hispanic or Latino,
+af0e5009-d87d-52a8-ac8a-676e471c41f1,2116-09-02,2182-10-16,S,White,Not Hispanic or Latino,en
+afa7c67f-82b9-5f51-bd04-8b7d7c4456c0,2073-05-10,,S,White,Not Hispanic or Latino,en
+b410dd44-7d65-56f9-974f-2751e8aa80e2,2075-09-17,,D,White,Not Hispanic or Latino,en
+b6769365-7062-53bf-850f-eddd09ebcf05,2059-06-28,2147-11-19,M,Asian,Not Hispanic or Latino,
+b7b92f05-c913-5a94-9a06-7b015e838f14,2099-11-15,,M,White,Not Hispanic or Latino,en
+bbad4581-d089-54a7-b7a0-8d986c5fb5ec,2125-08-04,,M,White,Not Hispanic or Latino,en
+bc2a74ce-4069-5983-9423-1c175f7854d9,2108-06-19,,M,White,Not Hispanic or Latino,en
+c0d83ad6-0b65-5fd6-b241-f50cf552232c,2136-02-15,,M,White,Not Hispanic or Latino,en
+c3412a5f-f8b9-57d2-9c70-53e3e40c91f0,2085-10-26,,UNK,White,Not Hispanic or Latino,
+c4c29979-f2f5-56db-af5b-1715887727b8,2079-12-15,,M,White,Hispanic or Latino,en
+cb70e6ae-90b1-562b-8ab0-467c65d18d5e,2086-10-08,,S,White,Not Hispanic or Latino,en
+cd462e42-c070-5235-ae76-c37733a451be,2103-06-09,,W,White,Not Hispanic or Latino,en
+d378a59b-aa80-5bc5-812a-7d59b26e7df4,2069-07-01,,UNK,unknown,,en
+dc332fb6-61f8-552e-8743-765d626f0a4e,2050-05-12,,M,White,Not Hispanic or Latino,en
+dd2bf984-33c3-5874-8f68-84113327877e,2054-12-18,2134-10-28,M,White,Not Hispanic or Latino,en
+dd773280-4157-5168-9481-3d29a5ff82d8,2084-11-30,,S,White,Not Hispanic or Latino,en
+de33a447-3c7f-541d-be72-a744dadcbbac,2084-01-02,,D,White,Not Hispanic or Latino,en
+df756e08-6ea8-5d69-b918-67911945f827,2066-05-08,2155-12-07,W,White,Not Hispanic or Latino,en
+e1de99bc-3bc5-565e-9ee6-69675b9cc267,2075-07-14,,W,White,Not Hispanic or Latino,en
+e232ee4d-3042-51c6-b730-a79eb8579d42,2138-01-07,,S,unknown,,en
+e2beb281-c44f-579b-8211-a3749c549e92,2130-10-30,,S,White,Not Hispanic or Latino,en
+e5408569-9931-5afe-b62d-4175e6b44784,2062-02-12,2154-02-04,W,White,Not Hispanic or Latino,en
+e635f2dd-aaec-5fef-a100-b9dfb523cbb6,2115-11-02,,M,White,Not Hispanic or Latino,en
+e7e213ac-81c0-5c7f-8d57-81519132353e,2058-08-16,,UNK,unknown,,en
+ece255e8-656b-5e09-8da9-33f88bc270a1,2107-10-04,,S,White,Not Hispanic or Latino,en
+f3fc719c-f6e0-5c27-a18f-b4e5afaf279b,2104-02-27,,S,White,Not Hispanic or Latino,en
+f572075b-186b-5565-b2d4-1567fe4f925c,2043-09-25,,M,White,Not Hispanic or Latino,en
+f5a99b42-365c-5f7e-bcab-4fa33b3cc88e,2089-11-14,2177-03-29,M,White,Not Hispanic or Latino,en
+f5efdf3f-5b53-5c9f-95a6-047275107c46,2060-05-22,,M,unknown,,en
+f77a5b72-65fd-5b20-8cef-6b6be4791265,2084-04-05,,W, Black or African American,Not Hispanic or Latino,en
+fa5fbf9c-23e3-5ef3-9cfb-24d20a950314,2097-10-25,,W,White,Hispanic or Latino,
