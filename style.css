@@ -1,56 +1,70 @@
-/* General Body Styling */
+/* Base Styles */
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: "Georgia", serif;
+  background-color: #fafafa;
+  color: #333;
   margin: 0;
+  padding: 0;
 }
 
-/* Flexbox Layout for the Chart & Form */
+/* Header */
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.byline {
+  font-size: 14px;
+  color: #777;
+  margin-top: -10px;
+}
+
+.intro {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Layout */
 .container {
   display: flex;
   gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 20px;
 }
 
-/* Chart Container */
-#chartContainer {
-  width: 600px;
-  height: 400px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-}
-
-/* Form Styling */
+/* Sidebar Filters */
 #formContainer {
-  width: 320px;
+  width: 300px;
   background: white;
-  padding: 25px;
-  margin: 0 auto;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Spacing for Each Form Section */
-#formContainer div {
-  margin-bottom: 18px;
+#formContainer h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
-/* Labels for Better Readability */
+#formContainer div {
+  margin-bottom: 15px;
+}
+
 #formContainer label {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
-  color: #333;
 }
 
-/* Styling Dropdowns & Inputs */
 #formContainer select,
 #formContainer input {
   width: 100%;
@@ -58,23 +72,8 @@ body {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
-  transition: 0.3s;
 }
 
-#formContainer select:focus,
-#formContainer input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
-}
-
-/* Range Slider */
-input[type="range"] {
-  width: 100%;
-  accent-color: #007bff;
-}
-
-/* Filter Button */
 #formContainer button {
   font-size: 16px;
   font-weight: bold;
@@ -92,16 +91,36 @@ input[type="range"] {
   background-color: #0056b3;
 }
 
-/* Loading Animation */
-#loading {
-  position: absolute;
-  top: 50px;
-  font-size: 18px;
-  color: #555;
+/* Main Content */
+.article-section {
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+.article-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Histogram Container */
+#chartContainer {
+  width: 100%;
+  height: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
 }
 
-/* Responsive Design for Smaller Screens */
+/* No Data Message */
+.no-data-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

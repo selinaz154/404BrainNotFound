@@ -3,24 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Medical Dashboard</title>
+    <title>Health Insights – A Data-Driven Look</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="header">
+      <h1>🩺 What Health Conditions Are Most Likely For You?</h1>
+      <p class="byline">By The Health Insights Team | Updated March 2025</p>
+      <p class="intro">
+        Health data can <strong>tell us more than we realize</strong>. What are
+        the <strong>most common conditions people like you experience</strong>?
+        What <strong>medications are most frequently prescribed</strong>? This
+        interactive guide explores trends using
+        <strong>real-world data</strong>.
+      </p>
+    </header>
+
     <div class="container">
-      <!-- Loading Message -->
-      <div id="loading">Loading data... Please wait.</div>
-
-      <!-- Histogram Chart -->
-      <div id="chartContainer">
-        <svg id="histogramChart"></svg>
-        <p id="noDataMessage" style="display: none; color: red">
-          ⚠️ Not enough data to display the chart.
-        </p>
-      </div>
-
-      <!-- Filters -->
-      <div id="formContainer">
+      <!-- Sidebar Filters -->
+      <aside id="formContainer">
+        <h2>🔍 Filter Patients</h2>
         <form id="dataForm">
           <div>
             <label for="language">Language:</label>
@@ -34,36 +36,58 @@
             <label for="race">Race:</label>
             <select id="race">
               <option value="all">All</option>
-              <option value="Hispanic or Latino">Hispanic or Latino</option>
-              <option value="Not Hispanic or Latino">
-                Not Hispanic or Latino
+              <option value="White">White</option>
+              <option value="Asian">Asian</option>
+              <option value="Black or African American">
+                Black or African American
               </option>
             </select>
           </div>
           <div>
-            <label for="ageRange">Age Range:</label>
-            <input type="range" id="ageRange" min="0" max="100" value="50" />
-            <output id="ageValue">50</output> years
+            <label for="age">Age:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="0"
+              max="120"
+              value="50"
+            />
+            <span>years</span>
           </div>
           <div>
-            <label for="married">Married:</label>
+            <label for="married">Marital Status:</label>
             <select id="married">
               <option value="all">All</option>
-              <option value="S">No</option>
-              <option value="M">Yes</option>
+              <option value="W">Widowed</option>
+              <option value="M">Married</option>
+              <option value="S">Single</option>
+              <option value="D">Divorced</option>
             </select>
           </div>
-          <div>
-            <label for="medicationStatus">Medication Status:</label>
-            <select id="medicationStatus">
-              <option value="all">All</option>
-              <option value="active">Active</option>
-              <option value="stopped">Stopped</option>
-            </select>
-          </div>
-          <button type="submit">Filter</button>
+          <button type="submit">Apply Filters</button>
         </form>
-      </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main>
+        <section class="article-section">
+          <h2>📊 What Conditions Are Most Likely for You?</h2>
+          <p>
+            Understanding common health conditions for your demographic can help
+            you make <strong>informed decisions</strong>. Our
+            <strong>Top 10 Conditions</strong> graph highlights the
+            <strong>most frequently occurring conditions</strong> based on your
+            selections.
+          </p>
+          <div id="chartContainer">
+            <svg id="histogramChart"></svg>
+            <p id="noDataMessage" class="no-data-message">
+              ⚠️ Not enough data to display this chart.
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
