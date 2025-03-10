@@ -1,46 +1,118 @@
+/* General Body Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
 }
 
+/* Flexbox Layout for the Chart & Form */
 .container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  padding: 20px;
 }
 
+/* Chart Container */
 #chartContainer {
   width: 600px;
   height: 400px;
   background: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-#formContainer {
-  width: 300px;
-  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border: 1px solid #ccc;
+  text-align: center;
 }
 
-button {
-  background-color: blue;
-  color: white;
+/* Form Styling */
+#formContainer {
+  width: 320px;
+  background: white;
+  padding: 25px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacing for Each Form Section */
+#formContainer div {
+  margin-bottom: 18px;
+}
+
+/* Labels for Better Readability */
+#formContainer label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Styling Dropdowns & Inputs */
+#formContainer select,
+#formContainer input {
+  width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+#formContainer select:focus,
+#formContainer input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Range Slider */
+input[type="range"] {
+  width: 100%;
+  accent-color: #007bff;
+}
+
+/* Filter Button */
+#formContainer button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   width: 100%;
+  transition: 0.3s;
 }
 
-button:hover {
-  background-color: darkblue;
+#formContainer button:hover {
+  background-color: #0056b3;
 }
 
-input[type="range"] {
-  width: 100%;
+/* Loading Animation */
+#loading {
+  position: absolute;
+  top: 50px;
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #chartContainer {
+    width: 100%;
+  }
+
+  #formContainer {
+    width: 90%;
+  }
 }

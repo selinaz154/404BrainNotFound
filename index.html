@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Histogram</title>
+    <title>Interactive Medical Dashboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <!-- Loading Message -->
+      <div id="loading">Loading data... Please wait.</div>
+
       <!-- Histogram Chart -->
       <div id="chartContainer">
         <svg id="histogramChart"></svg>
+        <p id="noDataMessage" style="display: none; color: red">
+          ⚠️ Not enough data to display the chart.
+        </p>
       </div>
 
-      <!-- Filter Form -->
+      <!-- Filters -->
       <div id="formContainer">
         <form id="dataForm">
           <div>
@@ -36,10 +42,6 @@
           </div>
           <div>
             <label for="ageRange">Age Range:</label>
-            <div class="slider-label">
-              <span>0 years</span>
-              <span>100 years</span>
-            </div>
             <input type="range" id="ageRange" min="0" max="100" value="50" />
             <output id="ageValue">50</output> years
           </div>
@@ -49,6 +51,14 @@
               <option value="all">All</option>
               <option value="S">No</option>
               <option value="M">Yes</option>
+            </select>
+          </div>
+          <div>
+            <label for="medicationStatus">Medication Status:</label>
+            <select id="medicationStatus">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="stopped">Stopped</option>
             </select>
           </div>
           <button type="submit">Filter</button>

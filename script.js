@@ -8,13 +8,33 @@ document.addEventListener("DOMContentLoaded", function () {
     .attr("width", width)
     .attr("height", height);
 
-  d3.json("json/patients_medications_procedures.json").then((data) => {
-    let filteredData = data;
+  // Show loading message
+  document.getElementById("loading").style.display = "block";
+
+  // Load both datasets
+  Promise.all([
+    d3.json("json/patients_medications_procedures.json"),
+    d3.json("json/patient_conditions.json"),
+  ]).then(([patientsData, medicationsData]) => {
+    document.getElementById("loading").style.display = "none";
+
+    let mergedData = patientsData.map((patient) => {
+      let medRecord = medicationsData.find(
+        (med) => med.PatientID === patient.PatientID
+      );
+      return { ...patient, ...medRecord };
+    });
 
     function updateHistogram(filteredData) {
       svg.selectAll("*").remove();
 
-      // Create bins (Age Distribution Example)
+      if (filteredData.length < 5) {
+        document.getElementById("noDataMessage").style.display = "block";
+        return;
+      } else {
+        document.getElementById("noDataMessage").style.display = "none";
+      }
+
       const ages = filteredData.map(
         (d) => new Date().getFullYear() - new Date(d.BirthDate).getFullYear()
       );
@@ -54,38 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
           d3.select(this).attr("fill", "steelblue");
         });
 
-      // X Axis
       svg
         .append("g")
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .call(d3.axisBottom(x));
 
-      // Y Axis
       svg
         .append("g")
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y));
-
-      // Labels
-      svg
-        .append("text")
-        .attr("x", width / 2)
-        .attr("y", height - 10)
-        .attr("text-anchor", "middle")
-        .attr("class", "axis-label")
-        .text("Patient Age Groups");
-
-      svg
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("x", -height / 2)
-        .attr("y", 15)
-        .attr("text-anchor", "middle")
-        .attr("class", "axis-label")
-        .text("Number of Patients");
     }
 
-    updateHistogram(filteredData);
+    updateHistogram(mergedData);
 
     document
       .getElementById("dataForm")
@@ -94,12 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedRace = document.getElementById("race").value;
         const selectedAge = document.getElementById("ageRange").value;
         const selectedMarital = document.getElementById("married").value;
+        const selectedMedicationStatus =
+          document.getElementById("medicationStatus").value;
 
-        filteredData = data.filter(
+        let filteredData = mergedData.filter(
           (d) =>
             (selectedRace === "all" || d.Race === selectedRace) &&
             (selectedMarital === "all" ||
               d.MaritalStatus === selectedMarital) &&
+            (selectedMedicationStatus === "all" ||
+              d.Status === selectedMedicationStatus) &&
             new Date().getFullYear() - new Date(d.BirthDate).getFullYear() <=
               selectedAge
         );
