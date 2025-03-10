@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+#chartContainer {
+  width: 600px;
+  height: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#formContainer {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+input[type="range"] {
+  width: 100%;
+}

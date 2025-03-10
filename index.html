@@ -3,118 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Form and Chart</title>
-
-    <style>
-      body {
-        display: flex;
-        justify-content: space-around;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-      }
-      #chartContainer {
-        width: 60%;
-        height: 400px;
-        border: 1px solid #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f9f9f9;
-      }
-      #formContainer {
-        width: 30%;
-        border: 1px solid #ccc;
-        padding: 20px;
-        background-color: #f9f9f9;
-      }
-      form div {
-        margin-bottom: 15px;
-      }
-      .slider-label {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9em;
-        color: #555;
-      }
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      select,
-      input[type="range"],
-      output {
-        width: 100%;
-      }
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-      }
-      button:hover {
-        background-color: #0056b3;
-      }
-    </style>
+    <title>Interactive Histogram</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="chartContainer">
-      <canvas id="histogramChart"></canvas>
-      <!-- Chart.js Histogram -->
-    </div>
+    <div class="container">
+      <!-- Histogram Chart -->
+      <div id="chartContainer">
+        <svg id="histogramChart"></svg>
+      </div>
 
-    <div id="formContainer">
-      <form id="dataForm">
-        <div>
-          <label for="language">Language:</label>
-          <select id="language" name="language">
-            <option value="en">English</option>
-            <option value="nonen">Not English</option>
-          </select>
-        </div>
-        <div>
-          <label for="race">Race:</label>
-          <select id="race" name="race">
-            <option value="Hispanic or Latino">Hispanic or Latino</option>
-            <option value="Not Hispanic or Latino">
-              Not Hispanic or Latino
-            </option>
-          </select>
-        </div>
-        <div>
-          <label for="ageRange">Age Range:</label>
-          <div class="slider-label">
-            <span>0 years</span>
-            <span>100 years</span>
+      <!-- Filter Form -->
+      <div id="formContainer">
+        <form id="dataForm">
+          <div>
+            <label for="language">Language:</label>
+            <select id="language">
+              <option value="all">All</option>
+              <option value="en">English</option>
+              <option value="nonen">Not English</option>
+            </select>
           </div>
-          <input
-            type="range"
-            id="ageRange"
-            name="ageRange"
-            min="0"
-            max="100"
-            value="50"
-            oninput="ageValue.value = ageRange.value"
-          />
-          <output id="ageValue">50</output> years
-        </div>
-        <div>
-          <label for="married">Married:</label>
-          <select id="married" name="married">
-            <option value="S">No</option>
-            <option value="M">Yes</option>
-          </select>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+          <div>
+            <label for="race">Race:</label>
+            <select id="race">
+              <option value="all">All</option>
+              <option value="Hispanic or Latino">Hispanic or Latino</option>
+              <option value="Not Hispanic or Latino">
+                Not Hispanic or Latino
+              </option>
+            </select>
+          </div>
+          <div>
+            <label for="ageRange">Age Range:</label>
+            <div class="slider-label">
+              <span>0 years</span>
+              <span>100 years</span>
+            </div>
+            <input type="range" id="ageRange" min="0" max="100" value="50" />
+            <output id="ageValue">50</output> years
+          </div>
+          <div>
+            <label for="married">Married:</label>
+            <select id="married">
+              <option value="all">All</option>
+              <option value="S">No</option>
+              <option value="M">Yes</option>
+            </select>
+          </div>
+          <button type="submit">Filter</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Load Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Link to External JavaScript File -->
-    <script src="./getdata.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
