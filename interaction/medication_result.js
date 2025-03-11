@@ -3,7 +3,7 @@ let mergedData = [];
 const numChunks = 50;
 
 async function loadAllChunks() {
-  let mergedData = [];
+  let loadPromises = [];
 
   for (let i = 1; i <= numChunks; i++) {
     loadPromises.push(
