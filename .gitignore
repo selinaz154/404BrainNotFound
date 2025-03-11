@@ -1,5 +1,4 @@
 csv/
-json/
 data/
 cond_medi_merge.py
 data_split.py
