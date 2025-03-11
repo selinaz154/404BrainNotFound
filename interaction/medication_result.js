@@ -2,26 +2,42 @@
 let mergedData = [];
 const numChunks = 50;
 
-function loadAllChunks() {
-  let loadPromises = [];
+async function loadAllChunks() {
+  let mergedData = [];
 
   for (let i = 1; i <= numChunks; i++) {
-    loadPromises.push(
-      d3
-        .json(`../medication/medi_${i}.json`)
-        .then(function (chunkData) {
-          if (!chunkData || typeof chunkData !== "object") {
-            throw new Error(`Invalid JSON data in medi_${i}.json`);
-          }
-          mergedData = mergedData.concat(chunkData);
-        })
-        .catch((error) => console.error(`Error loading medi_${i}.json:`, error))
-    );
+    const filePath = `../medication/medi_${i}.json`;
+    console.log(`Fetching: ${filePath}`);
+
+    try {
+      // Fetch response
+      const response = await fetch(filePath);
+
+      if (!response.ok) {
+        throw new Error(`Failed to load ${filePath}: HTTP ${response.status}`);
+      }
+
+      // Read as text first
+      const text = await response.text();
+      console.log(`Raw content from ${filePath}:`, text);
+
+      // Parse JSON safely
+      let jsonData;
+      try {
+        jsonData = JSON.parse(text);
+      } catch (error) {
+        console.error(`JSON Parsing Error in ${filePath}:`, text);
+        throw new Error("Invalid JSON format");
+      }
+
+      mergedData = mergedData.concat(jsonData);
+    } catch (error) {
+      console.error(`Error loading ${filePath}:`, error);
+    }
   }
 
-  Promise.all(loadPromises)
-    .then(() => processData())
-    .catch((error) => console.error("Error in loading chunks:", error));
+  console.log("✅ All chunks loaded successfully.");
+  processData(mergedData); // Pass data to next function
 }
 
 function processData() {
@@ -83,7 +99,9 @@ function processData() {
   });
 }
 
-loadAllChunks();
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadAllChunks();
+});
 
 // d3.text("data/cleaned_cond_medi.json").then((text) => {
 
