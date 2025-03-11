@@ -134,6 +134,7 @@ body {
   .container {
     flex-direction: column;
     align-items: center;
+    height: auto;
   }
 
   #formContainer {
