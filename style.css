@@ -39,19 +39,22 @@ body {
 .container {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 1200px;
+  width: 100%;
   margin: 40px auto;
   padding: 20px;
+  align-items: flex-start;
 }
 
 /* Sidebar Filters */
 #formContainer {
-  width: 300px;
+  flex: 0 0 280px;
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
 }
 
 #formContainer h2 {
@@ -97,8 +100,10 @@ body {
 
 /* Main Content */
 .article-section {
-  max-width: 700px;
+  flex-grow: 1;
+  max-width: 800px;
   line-height: 1.8;
+  margin-bottom: 40px;
 }
 
 .article-section h2 {
@@ -125,52 +130,57 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     flex-direction: column;
     align-items: center;
     height: auto;
   }
 
-  #chartContainer {
-    width: 100%;
-  }
-
   #formContainer {
     width: 90%;
   }
+
+  .article-section {
+    max-width: 100%;
+  }
 }
 
+/* --- 💊 IMPROVED MEDICATION SECTION --- */
 #cond_medi {
   display: flex;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
-  height: 80%;
+  min-height: 250px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: auto;
+  margin-top: 20px;
+  overflow: hidden;
 }
 
+/* Make the left div take more space */
 .left-div {
-  flex: 1;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto; /* Add scroll if content overflows */
+  flex: 2;
+  padding: 30px;
+  overflow-y: auto;
 }
 
+/* Make the right div slightly smaller */
 .right-div {
   flex: 1;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #f9f9f9;
 }
 
+/* Style Input Box */
 #conditionInput {
-  padding: 10px;
-  width: 80%;
+  padding: 12px;
+  width: 90%;
   margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -184,8 +194,9 @@ body {
   box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
 }
 
+/* Search Button */
 #searchButton {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   font-weight: bold;
   background-color: #007bff;
@@ -200,23 +211,37 @@ body {
   background-color: #0056b3;
 }
 
+/* Medication Result List */
 #results {
   margin-top: 20px;
   width: 100%;
   box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 250px;
 }
 
+/* Each medication item */
 .medication-item {
   margin: 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  padding: 12px;
+  background-color: #f1f1f1;
+  border-left: 5px solid #007bff;
   border-radius: 5px;
+  font-size: 16px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
+  /* animations */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+.medication-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Mobile adjustments */
 @media (max-width: 768px) {
   #cond_medi {
     flex-direction: column;
