@@ -29,7 +29,7 @@
             <select id="language">
               <option value="all">All</option>
               <option value="en">English</option>
-              <option value="nonen">Not English</option>
+              <option value="null">Not English</option>
             </select>
           </div>
           <div>
@@ -90,7 +90,23 @@
       </main>
     </div>
 
+    <br>
+    <hr>
+
+    <h3>Top 10 Medications Given For This Condition</h3>
+    <div id = 'cond_medi'>
+      <div class = "left-div">
+          <div id = "results"></div>
+      </div>
+      <div class = "right-div">
+          <input type = "text" id = "conditionInput" placeholder = "Enter a Condition (e.g., Diabetes)"/>
+          <button id = "searchButton">Find Medication</button>
+      </div>
+    </div>
+
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="script.js"></script>
+    <script src="interaction/medication_result.js"></script>
+    <script src="interaction/script.js"></script>
   </body>
 </html>
