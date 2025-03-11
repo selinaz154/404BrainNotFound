@@ -7,9 +7,13 @@ async function loadAllChunks() {
 
   for (let i = 1; i <= numChunks; i++) {
     loadPromises.push(
-      d3.json(`https://selinaz154.github.io/404BrainNotFound/medication/medi_${i}.json`).then(function (chunkData) {
-        mergedData = mergedData.concat(chunkData);
-      })
+      d3
+        .json(
+          `https://selinaz154.github.io/404BrainNotFound/medication/medi_${i}.json`
+        )
+        .then(function (chunkData) {
+          mergedData = mergedData.concat(chunkData);
+        })
     );
   }
 
@@ -53,12 +57,17 @@ function processData() {
       return;
     }
 
-    // Create a list of medications
-    medications.forEach(({ medication, count }) => {
+    medications.forEach(({ medication, count }, index) => {
       const medicationItem = document.createElement("div");
-      medicationItem.className = "medication-item";
+      medicationItem.className = "medication-item hidden"; // Start hidden
       medicationItem.textContent = `${medication} (prescribed ${count} times)`;
+
       resultsDiv.appendChild(medicationItem);
+
+      // Animate with a delay
+      setTimeout(() => {
+        medicationItem.classList.add("fade-in");
+      }, index * 200); // Each item appears 200ms after the previous one
     });
   }
 

@@ -8,26 +8,46 @@
   </head>
   <body>
     <header class="header">
-      <h1>🩺 What Health Conditions Are Patients Like You Most Likely To Have?</h1>
+      <h1>🩺 We Crunched the Numbers: You Might Be Falling Apart (Or Not)</h1>
       <p class="byline">By 404BrainNotFound | Updated March 2025</p>
       <p class="intro">
-        Health data can tell us more than we realize. 
-        <br><br>
-        What are the <strong>most common conditions</strong> people like you experience?
-        <br><br>
-        What medications are <strong>most frequently prescribed</strong>? <br><br>
+        Ever wondered what medical conditions you're statistically doomed to
+        develop? Well, science (questionable science, but still) has your back.
+        This data-driven analysis will tell you exactly which ailments to keep
+        an eye on based on data-backed trends. We will be analyzing a dataset of
+        100 patients, each with a unique combination of demographic factors and
+        health conditions.
+        <strong
+          >This dataset is fictional and generated for educational
+          purposes</strong
+        >, but it provides valuable insights into the relationships between
+        demographics and health conditions.
+      </p>
+      <p class="intro">
+        Health data can tell us more than we realize.
+        <br /><br />
+        What are the <strong>most common conditions</strong> people like you
+        experience? <br /><br />
+        What medications are <strong>most frequently prescribed</strong>?
+        <br /><br />
         This interactive guide explores trends using
         <strong>real-world generated data</strong>.
       </p>
     </header>
 
+    <div><img src="bird.png" alt="sick_bird" /></div>
     <div class="container">
       <!-- Sidebar Filters -->
       <aside id="formContainer">
-        <h2>🔍 Filter Patients</h2>
+        <h2>🔍 Find Your Medical Twin</h2>
+        <p>
+          Ever wonder if someone out there is facing the same health concerns as
+          you? Adjust the filters below to find out what conditions people just
+          like you are statistically more likely to have.
+        </p>
         <form id="dataForm">
           <div>
-            <label for="language">Language:</label>
+            <label for="language">Primary Language:</label>
             <select id="language">
               <option>Select</option>
               <option value="en">English</option>
@@ -35,7 +55,7 @@
             </select>
           </div>
           <div>
-            <label for="race">Race:</label>
+            <label for="race">Race/Ethnicity:</label>
             <select id="race">
               <option>Select</option>
               <option value="White">White</option>
@@ -74,13 +94,15 @@
       <!-- Main Content -->
       <main>
         <section class="article-section">
-          <h2>📊 What Conditions Are Most Likely for You?</h2>
+          <h2>What Conditions Are Most Likely for You?</h2>
           <p>
-            Understanding common health conditions for your demographic can help you make <strong>informed decisions</strong>. Our
-            <strong>Top 10 Conditions</strong> graph highlights the
-            <strong>most frequently occurring conditions</strong> based on your selections.
-            <br>
-            * Click on a bar to see more information about the condition *
+            So what does the data actually say? Based on your selected
+            demographic filters, we’ve compiled a list of the most frequently
+            occurring conditions for patients like you. This isn’t a
+            diagnosis—just a probability game based on our data.
+            <br /><br />
+            Click on a bar to see more information about each condition. Then,
+            you can search for the medications commonly prescribed for it.
           </p>
           <div id="chartContainer">
             <svg id="histogramChart"></svg>
@@ -88,28 +110,80 @@
               ⚠️ Not enough data to display this chart.
             </p>
           </div>
-          <br>
-          * Copy and paste the condition from the tooltip into the search bar below to see the medications * 
+          <p>
+            <strong>Note:</strong> Copy and paste the condition from the tooltip into the search bar below to see the medications
+            graph
+          </p>
         </section>
       </main>
     </div>
 
-    <br>
-    <hr>
+    <br />
+    <hr />
 
-    <h3>Top 10 Medications Given For This Condition</h3>
-    <div id = 'cond_medi'>
-      <div class = "left-div">
-          <div id = "results"></div>
+    <!-- Medication Search -->
+    <section class="article-section">
+      <h2>💊 What Medications Are Given for This Condition?</h2>
+      <p>
+        Found a condition that concerns you? Use the search bar below to find
+        out which medications are most frequently prescribed to treat it.
+      </p>
+      <div id="cond_medi">
+        <div class="left-div">
+          <div id="results"></div>
+        </div>
+        <div class="right-div">
+          <input
+            type="text"
+            id="conditionInput"
+            placeholder="Enter a Condition (e.g., Diabetes)"
+          />
+          <button id="searchButton">Find Medication</button>
+        </div>
       </div>
-      <div class = "right-div">
-          <input type = "text" id = "conditionInput" placeholder = "Enter a Condition (e.g., Diabetes)"/>
-          <button id = "searchButton">Find Medication</button>
-      </div>
-    </div>
+    </section>
 
+    <br />
+    <hr />
+
+    <!-- Stacked Bar Chart -->
+    <section class="article-section">
+      <h2>Condition Distribution Across Age Groups</h2>
+      <p>
+        Nobody escapes time, and as the years go by, our bodies start collecting
+        medical conditions.
+        <br />
+        This graph gives you a sneak peek at what might be lurking in your
+        future, based on real-world trends. Here’s how different health
+        conditions stack up across age groups. If you're still in your 20s,
+        congrats! Enjoy it while it lasts.
+        <br />If you’re in your 60s… well, let’s just say your body has been
+        through a lot. This visualization breaks down which conditions become
+        more common as people age, so you can prepare for what's ahead (or live
+        in blissful ignorance, your call).
+      </p>
+      <div id="stackedBarChartContainer"></div>
+    </section>
+
+    <br />
+    <hr />
+
+    <section class="article-section">
+      <h2>What Can You Take Away From This?</h2>
+      <p>
+        This dataset may be fictional, but the patterns it reveals are very
+        real. By understanding which conditions occur most frequently among
+        different demographics, we can be more proactive in our health
+        decisions.
+        <br /><br />
+        But at the end of the day, no dataset can predict the future. So take
+        care of yourself, eat some vegetables, and maybe don't trust everything
+        you read on the internet.
+      </p>
+    </section>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="interaction/condition_trends.js"></script>
     <script src="interaction/medication_result.js"></script>
     <script src="interaction/scripts2.js"></script>
   </body>
