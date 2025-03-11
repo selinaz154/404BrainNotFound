@@ -7,7 +7,7 @@ async function loadAllChunks() {
 
   for (let i = 1; i <= numChunks; i++) {
     loadPromises.push(
-      d3.json(`medication/medi_${i}.json`).then(function (chunkData) {
+      d3.json(`https://selinaz154.github.io/404BrainNotFound/medication/medi_${i}.json`).then(function (chunkData) {
         mergedData = mergedData.concat(chunkData);
       })
     );
