@@ -18,7 +18,7 @@ async function processFormData() {
   );
 
   // Fetch JSON data
-  const jsonData = await fetchJSON("../json/new4.json");
+  const jsonData = await fetchJSON("https://selinaz154.github.io/404BrainNotFound/new4.json");
 
   // Filter data based on user inputs
   const filteredData = jsonData.filter((d) => {
