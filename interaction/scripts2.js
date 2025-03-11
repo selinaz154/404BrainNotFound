@@ -180,16 +180,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add y-axis (counts)
     g.append("g").call(d3.axisLeft(y));
   
+    const data = labels.map((label, i) => ({label, value: values[i]}));
+
     // Add bars
     const bars = g.selectAll(".bar")
-      .data(values)
+      .data(data)
       .enter()
       .append("rect")
       .attr("class", "bar")
-      .attr("x", (d, i) => x(labels[i])) // Position bars based on condition names
-      .attr("y", (d) => y(d)) // Position bars based on counts
+      .attr("x", (d) => x(d.label))
+      .attr("y", (d) => y(d.value))
       .attr("width", x.bandwidth())
-      .attr("height", (d) => height - y(d)) // Height based on counts
+      .attr("height", (d) => height - y(d.value))
       .attr("fill", "rgba(54, 162, 235, 0.6)")
       .attr("stroke", "rgba(54, 162, 235, 1)")
       .attr("stroke-width", 1)
@@ -214,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("y", -10)
       .attr("text-anchor", "middle")
       .text("Top 10 Conditions by Count");
+      
   
     // Add y-axis label
     g.append("text")
@@ -241,8 +244,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedBar = null;
 
     bars.on("click", function (event, d) {
-        const condition = labels[values.indexOf(d)];
-        const count = d;
+        const condition = d.label;//labels[values.indexOf(d)];
+        const count = d.value;//d;
         const currentBar = d3.select(this);  // Get the clicked bar
 
         // If the same bar is clicked again, unhighlight it and hide the tooltip
