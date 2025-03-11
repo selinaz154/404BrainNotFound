@@ -13,8 +13,11 @@ async function loadAllChunks() {
     );
   }
 
-  console.log("✅ All chunks loaded successfully.");
-  processData(mergedData); // Pass data to next function
+  // console.log("✅ All chunks loaded successfully.");
+  // processData(mergedData); // Pass data to next function
+  Promise.all(loadPromises)
+    .then(() => processData())
+    .catch((error) => console.error("Error in loading chunks:", error));
 }
 
 function processData() {
