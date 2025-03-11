@@ -8,14 +8,16 @@
   </head>
   <body>
     <header class="header">
-      <h1>🩺 What Health Conditions Are Most Likely For You?</h1>
+      <h1>🩺 What Health Conditions Are Patients Like You Most Likely To Have?</h1>
       <p class="byline">By 404BrainNotFound | Updated March 2025</p>
       <p class="intro">
-        Health data can <strong>tell us more than we realize</strong>. What are
-        the <strong>most common conditions people like you experience</strong>?
-        What <strong>medications are most frequently prescribed</strong>? This
-        interactive guide explores trends using
-        <strong>real-world data</strong>.
+        Health data can tell us more than we realize. 
+        <br><br>
+        What are the <strong>most common conditions</strong> people like you experience?
+        <br><br>
+        What medications are <strong>most frequently prescribed</strong>? <br><br>
+        This interactive guide explores trends using
+        <strong>real-world generated data</strong>.
       </p>
     </header>
 
@@ -27,7 +29,7 @@
           <div>
             <label for="language">Language:</label>
             <select id="language">
-              <option value="all">All</option>
+              <option>Select</option>
               <option value="en">English</option>
               <option value="null">Not English</option>
             </select>
@@ -35,7 +37,7 @@
           <div>
             <label for="race">Race:</label>
             <select id="race">
-              <option value="all">All</option>
+              <option>Select</option>
               <option value="White">White</option>
               <option value="Asian">Asian</option>
               <option value="Black or African American">
@@ -51,14 +53,14 @@
               name="age"
               min="0"
               max="120"
-              value="50"
+              value="0"
             />
             <span>years</span>
           </div>
           <div>
             <label for="married">Marital Status:</label>
             <select id="married">
-              <option value="all">All</option>
+              <option>Select</option>
               <option value="W">Widowed</option>
               <option value="M">Married</option>
               <option value="S">Single</option>
@@ -107,6 +109,6 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="interaction/medication_result.js"></script>
-    <script src="interaction/script.js"></script>
+    <script src="interaction/scripts2.js"></script>
   </body>
 </html>

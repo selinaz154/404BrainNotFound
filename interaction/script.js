@@ -29,7 +29,7 @@ async function processFormData() {
       performedDate.getFullYear() - birthDate.getFullYear()
     );
 
-    console.log(ageAtProcedure);
+    // console.log(ageAtProcedure);
     // Match user inputs with data fields
     const matchesLanguage = d.Language == language;
     const matchesRace = d.Race === race;

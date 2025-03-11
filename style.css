@@ -234,3 +234,10 @@ body {
     padding: 20px;
   }
 }
+
+.no-data-message {
+  color: #f44336; /* Red color */
+  font-weight: bold;
+  display: none; /* Hidden by default */
+  margin-top: 20px;
+}
