@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 async function processFormData() {
   // Get user inputs
   const race = document.getElementById("race").value;
-  const ageRange = parseInt(document.getElementById("ageRange").value, 10);
+  const ageRange = parseInt(document.getElementById("age").value, 10);
   const married = document.getElementById("married").value;
   const language = document.getElementById("language").value;
 
