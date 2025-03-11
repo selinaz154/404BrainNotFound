@@ -173,18 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add x-axis (condition names)
     g.append("g")
       .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x))
-      .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", ".15em")
-      .attr("transform", "rotate(-40)"); // Rotate labels for better readability
+      .call(d3.axisBottom(x).ticks(0))
+      .selectAll(".tick")
+      .remove();
   
     // Add y-axis (counts)
     g.append("g").call(d3.axisLeft(y));
   
     // Add bars
-    g.selectAll(".bar")
+    const bars = g.selectAll(".bar")
       .data(values)
       .enter()
       .append("rect")
@@ -196,20 +193,20 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("fill", "rgba(54, 162, 235, 0.6)")
       .attr("stroke", "rgba(54, 162, 235, 1)")
       .attr("stroke-width", 1)
-      .on("mouseover", function (event, d) {
-        // Show tooltip on mouseover
-        const condition = labels[values.indexOf(d)];
-        const count = d;
-        tooltip.transition().duration(200).style("opacity", 0.9);
-        tooltip
-          .html(`Condition: ${condition}<br>Count: ${count}`)
-          .style("left", event.pageX + 5 + "px")
-          .style("top", event.pageY - 28 + "px");
-      })
-      .on("mouseout", function (d) {
-        // Hide tooltip on mouseout
-        tooltip.transition().duration(500).style("opacity", 0);
-      });
+    //   .on("mouseover", function (event, d) {
+    //     // Show tooltip on mouseover
+    //     const condition = labels[values.indexOf(d)];
+    //     const count = d;
+    //     tooltip.transition().duration(200).style("opacity", 0.9);
+    //     tooltip
+    //       .html(`Condition: ${condition}<br>Count: ${count}`)
+    //       .style("left", event.pageX + 5 + "px")
+    //       .style("top", event.pageY - 28 + "px");
+    //   })
+    //   .on("mouseout", function (d) {
+    //     // Hide tooltip on mouseout
+    //     tooltip.transition().duration(500).style("opacity", 0);
+    //   });
   
     // Add chart title
     g.append("text")
@@ -238,6 +235,59 @@ document.addEventListener("DOMContentLoaded", function () {
       .style("border", "1px solid #ccc")
       .style("padding", "5px")
       .style("border-radius", "5px")
-      .style("pointer-events", "none");
+      .style("pointer-events", "none")
+      .style("user-select", "text");
+
+    let selectedBar = null;
+
+    bars.on("click", function (event, d) {
+        const condition = labels[values.indexOf(d)];
+        const count = d;
+        const currentBar = d3.select(this);  // Get the clicked bar
+
+        // If the same bar is clicked again, unhighlight it and hide the tooltip
+        if (selectedBar === currentBar.node()) {
+            // Unhighlight the current bar
+            currentBar
+                .classed("selected", false)
+                .attr("fill", "rgba(54, 162, 235, 0.6)");  // Revert color
+
+            // Hide the tooltip
+            tooltip.transition().duration(500).style("opacity", 0).style("visibility", "hidden").style("pointer-events", "none");
+
+            // Reset the selected bar
+            selectedBar = null;
+            return;
+        }
+
+        // Unhighlight the previously selected bar if there is one
+        if (selectedBar) {
+            d3.select(selectedBar)
+                .classed("selected", false)
+                .attr("fill", "rgba(54, 162, 235, 0.6)");  // Revert color of the previous bar
+        }
+
+        // Highlight the newly selected bar
+        currentBar
+            .classed("selected", true)
+            .attr("fill", "rgba(255, 99, 132, 0.8)");  // Highlight color for the selected bar
+
+        // Update the currently selected bar reference
+        selectedBar = currentBar.node();
+
+        // Show the tooltip for the newly selected bar
+        tooltip.transition().duration(200).style("opacity", 0.9).style("visibility", "visible").style("pointer-events", "auto");
+        tooltip
+            .html(`Condition: ${condition}<br>Count: ${count}`)
+            .style("left", event.pageX + 5 + "px")
+            .style("top", event.pageY - 28 + "px");
+    });
+
+
+    d3.select("body").on("click", function(event) {
+        if (!d3.select(event.target).classed("bar") && !d3.select(event.target).classed("tooltip") && !tooltip.node().contains(event.target)) {
+            tooltip.transition().duration(500).style("opacity", 0).style("visibility", "hidden").style("pointer-events", "none"); 
+        }
+    });
   }
   
