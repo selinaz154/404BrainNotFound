@@ -45,6 +45,7 @@ body {
   margin: 40px auto;
   padding: 20px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* Sidebar Filters */
@@ -266,4 +267,8 @@ body {
   font-weight: bold;
   display: none; /* Hidden by default */
   margin-top: 20px;
+}
+
+#age {
+  box-sizing: border-box;
 }
