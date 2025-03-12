@@ -279,7 +279,8 @@ function renderHistogram(labels, values) {
     // Highlight the newly selected bar
     currentBar
       .classed("selected", true)
-      .attr("fill", "rgba(255, 99, 132, 0.8)"); // Highlight color for the selected bar
+      .attr("fill", "rgba(178, 34, 34, 1)");
+    //   .attr("fill", "rgba(255, 99, 132, 0.8)"); // Highlight color for the selected bar
 
     // Update the currently selected bar reference
     selectedBar = currentBar.node();
