@@ -53,7 +53,6 @@ async function processFormData() {
   const ageRange = parseInt(document.getElementById("age").value, 10);
   const married = document.getElementById("married").value;
   const language = document.getElementById("language").value;
-
   console.log(
     `Language: ${language}, Race: ${race}, Age Range: ${ageRange}, Married: ${married}`
   );
@@ -77,21 +76,27 @@ async function processFormData() {
       ageAtProcedure--;
     }
 
+    const personRace = d.Race.trim();
     // Match user inputs with data fields
-    const matchesLanguage = language === "all" || d.Language === language;
-    const matchesRace = race === "all" || d.Race === race;
+    const matchesLanguage = 
+        language === "en" 
+        ? d.Language === "en" : d.Language === null;
+    const matchesRace = personRace === race;
     const matchesAge =
       ageAtProcedure >= ageRange - 10 && ageAtProcedure <= ageRange + 10;
-    const matchesMaritalStatus =
-      married === "all" || d.MaritalStatus === married;
+    const matchesMaritalStatus = d.MaritalStatus === married;
+    // console.log(matchesRace);
+    if(matchesRace && matchesAge) {
+        console.log(
+            `Person: ${d.Race}, Language: ${d.Language}, Matches Language: ${matchesLanguage}, Matches Race: ${matchesRace}, Matches Age: ${matchesAge}, Matches Marital Status: ${matchesMaritalStatus}`
+        );
+        console.log(`${language} === ${d.Language} = `, language === d.Language);
+    }
+    
 
     return matchesLanguage && matchesRace && matchesAge && matchesMaritalStatus;
   });
 
-  // if (filteredData.length === 0) {
-  //   alert("No data available for the selected filters.");
-  //   return; // Prevent rendering the graph if no data matches
-  // }
 
   console.log("Filtered Data:", filteredData);
 
